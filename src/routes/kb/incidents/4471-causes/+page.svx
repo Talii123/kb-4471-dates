@@ -19,7 +19,7 @@ it known. Read one by one, they are two different problems. The engineering upda
 won't fix the second.
 
 <Callout>
-One ticket, one fix queued is wrong. The booking-v3 hint has no ticket of its own.
+**#4471 held two problems, not one.** The parser is fixed. The booking-v3 hint was closed as won't fix, because the form is retired.
 </Callout>
 
 ## The two problems

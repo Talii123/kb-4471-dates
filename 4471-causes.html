@@ -4,7 +4,7 @@
 <h1>#4471 · two problems, not one</h1>
 <p><small>owner: Talii123 · status: closed · reviewed: 2026-11-05</small></p>
 <p><a href="/kb/incidents/4471">#4471</a> merged <strong>412 reports</strong> about wrong dates into one issue and marked it known. Read one by one, they are two different problems. The engineering update of 5 October fixed the first and won't fix the second.</p>
-<div class="callout">One ticket, one fix queued is wrong. The booking-v3 hint has no ticket of its own.</div>
+<div class="callout"><strong>#4471 held two problems, not one.</strong> The parser is fixed. The booking-v3 hint was closed as won't fix, because the form is retired.</div>
 <h2>The two problems</h2>
 <ol>
 <li><strong>Parser reads month first.</strong> The shared parser reads every date month first. All eleven tenants write the day first, so their dates come out flipped. Fixed on 5 October: <code>fix(dates): parse dd/mm for eu locales</code>. <strong>379 reports.</strong> Five of them read as a one-day move; the desk counts them here by tenant. Ticket: <a href="https://github.com/Talii123/kb-4471-dates/issues/1">issue 1</a>.</li>
