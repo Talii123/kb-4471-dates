@@ -2,13 +2,13 @@
 <html lang="en"><head><meta charset="utf-8"><title>#4471 · two problems, not one</title>
 <style>body{font:16px/1.5 system-ui;max-width:42rem;margin:2rem auto;padding:0 1rem}table{border-collapse:collapse}td,th{border:1px solid #ccc;padding:.3rem .6rem}.wrong td{background:#fff4e5}.callout{border-left:4px solid #c60;padding:.5rem 1rem;background:#fff4e5}.stamp{font:.85rem monospace;color:#666}</style></head><body>
 <h1>#4471 · two problems, not one</h1>
-<p><small>owner: Talii123 · status: proposed · reviewed: 2026-11-05</small></p>
-<p><a href="/kb/incidents/4471">#4471</a> merged <strong>412 reports</strong> about wrong dates into one issue and marked it known. Read one by one, they are two different problems. The fix that is queued covers only the first.</p>
+<p><small>owner: Talii123 · status: closed · reviewed: 2026-11-05</small></p>
+<p><a href="/kb/incidents/4471">#4471</a> merged <strong>412 reports</strong> about wrong dates into one issue and marked it known. Read one by one, they are two different problems. The engineering update of 5 October fixed the first and won't fix the second.</p>
 <div class="callout">One ticket, one fix queued is wrong. The booking-v3 hint has no ticket of its own.</div>
 <h2>The two problems</h2>
 <ol>
-<li><strong>Parser reads month first.</strong> The shared parser reads every date month first. All eleven tenants write the day first, so their dates come out flipped. This is the queued fix. <strong>379 reports.</strong> Five of them read as a one-day move; the desk counts them here by tenant. Ticket: <a href="https://github.com/Talii123/kb-4471-dates/issues/1">issue 1</a>.</li>
-<li><strong>The booking-v3 hint.</strong> The booking-v3 form prints <code>MM/DD/YYYY</code> under the date field. People at <code>copper.studio</code>, <code>alder.physio</code> and <code>pale.harbour</code> type month first, as the hint says, and the form reads it day first. The parser fix does not repair this. Intake tagged 15 of these 33 as <code>parser</code>. <strong>33 reports.</strong> Ticket: <a href="https://github.com/Talii123/kb-4471-dates/issues/2">issue 2</a>.</li>
+<li><strong>Parser reads month first.</strong> The shared parser reads every date month first. All eleven tenants write the day first, so their dates come out flipped. Fixed on 5 October: <code>fix(dates): parse dd/mm for eu locales</code>. <strong>379 reports.</strong> Five of them read as a one-day move; the desk counts them here by tenant. Ticket: <a href="https://github.com/Talii123/kb-4471-dates/issues/1">issue 1</a>.</li>
+<li><strong>The booking-v3 hint.</strong> The booking-v3 form prints <code>MM/DD/YYYY</code> under the date field. People at <code>copper.studio</code>, <code>alder.physio</code> and <code>pale.harbour</code> type month first, as the hint says, and the form reads it day first. The parser fix does not repair this. Won't fix: the booking-v3 form is retired. Intake tagged 15 of these 33 as <code>parser</code>. <strong>33 reports.</strong> Ticket: <a href="https://github.com/Talii123/kb-4471-dates/issues/2">issue 2</a>.</li>
 </ol>
 <p>379 + 33 = 412. The ticket export repeats 15 rows; count by report id.</p>
 <h2>What the desk's table says</h2>
