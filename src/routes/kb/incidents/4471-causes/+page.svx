@@ -4,14 +4,14 @@ title: '#4471 · three problems, not one'
 owner: Talii123
 status: proposed
 reviewed: 2026-11-05
-signature: Talii123 with Claude
+signature: v1.eyJzdWIiOiIyMzg0IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTM4OTkzNzMsImV4cCI6MTc5Mzk4NTc3M30.GzlHDSToWRwyYd9fiBAurV6wgTtX4jIwEupZYo_G-hU
 ---
 
 <script>
   import CauseTable from '#lib/kb/CauseTable.svelte';
   import Callout from '#lib/kb/Callout.svelte';
   import RenderStamp from '#lib/kb/RenderStamp.svelte';
-  const signature = 'Talii123 with Claude';
+  const signature = 'v1.eyJzdWIiOiIyMzg0IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTM4OTkzNzMsImV4cCI6MTc5Mzk4NTc3M30.GzlHDSToWRwyYd9fiBAurV6wgTtX4jIwEupZYo_G-hU';
 </script>
 
 [#4471](/kb/incidents/4471) merged **412 reports** about wrong dates into one issue and marked
