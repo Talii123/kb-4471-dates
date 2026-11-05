@@ -1,0 +1,54 @@
+---
+layout: runbook
+title: '#4471 · three problems, not one'
+owner: Talii123
+status: proposed
+reviewed: 2026-11-05
+signature: Talii123 with Claude
+---
+
+<script>
+  import CauseTable from '#lib/kb/CauseTable.svelte';
+  import Callout from '#lib/kb/Callout.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+  const signature = 'Talii123 with Claude';
+</script>
+
+[#4471](/kb/incidents/4471) merged **412 reports** about wrong dates into one issue and marked
+it known. Read one by one, they are three different problems. The fix that is queued covers only
+the first.
+
+<Callout>
+One ticket, one fix queued is wrong. Two problems have no ticket of their own, and one of them
+is not about month and day at all.
+</Callout>
+
+## The three problems
+
+1. **Parser reads month first.** The shared parser reads every date month first. All eleven
+   tenants write the day first, so their dates come out flipped. This is the queued fix.
+   **374 reports.** Ticket: [issue 1](https://github.com/Talii123/kb-4471-dates/issues/1).
+2. **The booking-v3 hint.** The booking-v3 form prints `MM/DD/YYYY` under the date field. People
+   at `copper.studio`, `alder.physio` and `pale.harbour` type month first, as the hint says, and
+   the form reads it day first. The parser fix does not repair this. Intake tagged 15 of these
+   33 as `parser`. **33 reports.** Ticket: [issue 2](https://github.com/Talii123/kb-4471-dates/issues/2).
+3. **Off by one day.** Five reports are one day off, not a month and day swap. They read like a
+   timezone problem: Lisbon and Toronto see different days for the same meeting. The desk listed
+   them in `desk-notes.json` but still filed them under the parser. **5 reports.**
+   Ticket: [issue 3](https://github.com/Talii123/kb-4471-dates/issues/3).
+
+374 + 33 + 5 = 412. The ticket export repeats 15 rows; count by report id.
+
+## What the desk's table says
+
+<CauseTable ticket={4471} />
+
+The table counts the five one-day reports under the parser, so it shows 379 and 33.
+
+## Lessons
+
+- Merge by what the report says, then check the cause. A subject line and a browser guess
+  (`intakeTag`) are not the cause.
+- Keep the desk's own notes in the count. The five one-day reports were already flagged.
+
+<RenderStamp {signature} />
