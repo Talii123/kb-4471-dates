@@ -22,7 +22,7 @@ the first.
 One ticket, one fix queued is wrong. The booking-v3 hint has no ticket of its own.
 </Callout>
 
-## The three problems
+## The two problems
 
 1. **Parser reads month first.** The shared parser reads every date month first. All eleven
    tenants write the day first, so their dates come out flipped. This is the queued fix.
